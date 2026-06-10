@@ -22,7 +22,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
@@ -73,12 +72,12 @@ export function SiteHeader() {
                 <UserAvatar name={displayName} hue={profile?.role === "admin" ? 130 : 95} />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-52">
-                <DropdownMenuLabel className="flex flex-col gap-0.5">
+                <div className="flex flex-col gap-0.5 px-1.5 py-1">
                   <span className="truncate text-sm">@{displayName}</span>
-                  <span className="truncate text-xs font-normal text-muted-foreground">
+                  <span className="truncate text-xs text-muted-foreground">
                     {user?.email}
                   </span>
-                </DropdownMenuLabel>
+                </div>
                 <DropdownMenuSeparator />
                 {isAdmin && (
                   <DropdownMenuItem onClick={() => router.push("/admin")}>
